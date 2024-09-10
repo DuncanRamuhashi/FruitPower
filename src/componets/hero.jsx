@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './navbar'
 import background from '../assets/f1.jpg'
 
+
 const Hero = () => {
   return (
     <div className='relative flex flex-col w-full h-[950px] items-center  bg-cover duration-500' style={{backgroundImage: `url(${background})`}}>
