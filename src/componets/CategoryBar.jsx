@@ -22,12 +22,20 @@ const CategoryBar = () => {
          
            
             </div>
-            <div class="hover:animate-flash">
-            <div className='flex flex-row justify-items-center space-x-4'  >
-              <a href='' className='text-white text-4xl font-semibold'>My Cart</a>
-              <img className='h-10 w-10' src={cart}/>
-              </div>
-            </div>
+            <a href=''>
+            <div className='flex items-center space-x-4 hover:animate-flash'>
+           <a  className='text-white text-4xl font-semibold'>My Cart</a>
+              <div className='relative flex items-center'>
+             <img className='h-10 w-10' src={cart} alt='Cart Icon'/>
+              <span className='absolute top-0 right-0 -translate-x-1/2 translate-y-1/2 bg-blue-600 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center'>
+                   5
+                    </span>
+               </div>
+           </div>
+
+            </a>
+
+
             
             <a href=''>
             <div class="hover:animate-flash">

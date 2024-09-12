@@ -8,6 +8,10 @@ export default {
     theme: {
       extend: {
           keyframes: {
+            roll: {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' },
+            },
               "fade-in": {
                   "0%": {
                       opacity: 0
@@ -1090,6 +1094,9 @@ export default {
                   opacity: 0,
                   transform: "scale3d(0.3, 0.3, 0.3) translate3d(-100%, 0%, 0)",
                 },
+              },
+              animation: {
+                roll: 'roll 5s linear infinite',
               },
               "zoom-out-right": {
                 "0%": {
