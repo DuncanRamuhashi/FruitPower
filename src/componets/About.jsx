@@ -14,10 +14,10 @@ import Footer from './Footer';
 import ContactSession from './ContactSession';
 const About = () => {
   return (
-    <div
-      className="h-full w-full flex flex-col py-20 px-32 relative"
-      style={{ backgroundImage: `url(${backGround})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-    >
+<div
+  className="h-full w-full flex flex-col py-8 px-4 sm:py-12 sm:px-8 lg:py-20 lg:px-32 relative"
+  style={{ backgroundImage: `url(${backGround})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+>
       <div className="flex flex-col items-center space-y-8">
         <h1 className="text-white text-6xl font-extrabold text-center drop-shadow-lg">
           About Us
@@ -41,7 +41,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="py-20 flex  justify-center gap-4 pr-12">
+      <div className="py-20 md:flex grid grid-cols-2  justify-center gap-4 pr-12">
         <div className="flex-shrink-0 animate-roll">
           <img src={f1} className="h-48 w-48 object-cover rounded-lg shadow-xl shadow-black" alt="Fruit 1" />                                         
         </div>
