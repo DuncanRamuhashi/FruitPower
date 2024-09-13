@@ -11,7 +11,7 @@ const Navbar = () => {
           <img className=' h-44' src={logo}/> 
         </a>
      </div>
-     
+
      <div className=' py-20 px-20'>
          <nav className='flex space-x-20'>
               <a href='' className='text-white text-2xl font-semibold '>Sign in</a>
@@ -24,8 +24,7 @@ const Navbar = () => {
                </span>
               </div>
               </a>
-
-              
+         
          </nav>
      </div>
 

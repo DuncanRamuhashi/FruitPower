@@ -41,7 +41,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="py-20 flex  justify-center gap-4">
+      <div className="py-20 flex  justify-center gap-4 pr-12">
         <div className="flex-shrink-0 animate-roll">
           <img src={f1} className="h-48 w-48 object-cover rounded-lg shadow-xl shadow-black" alt="Fruit 1" />                                         
         </div>

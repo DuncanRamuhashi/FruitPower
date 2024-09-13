@@ -5,6 +5,7 @@ import CategoryBar from './componets/CategoryBar';
 
 
 import About from './componets/About';
+import Shop from './componets/Shop';
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
     <>
       <Hero/>
       <CategoryBar/>
+      <Shop/>
       <About/>
 
 
