@@ -16,7 +16,7 @@ const CategoryBar = () => {
     </div>
 
     <div className='hover:animate-flash'>
-      <a href='' className='text-white text-3xl sm:text-4xl font-semibold font-mono'>Shop</a>
+      <a href='#shop' className='text-white text-3xl sm:text-4xl font-semibold font-mono'>Shop</a>
     </div>
 
     <a href='' className='flex items-center space-x-4 hover:animate-flash'>
@@ -30,11 +30,11 @@ const CategoryBar = () => {
     </a>
 
     <div className='hover:animate-flash'>
-      <a href='' className='text-white text-3xl sm:text-4xl font-semibold font-mono'>About</a>
+      <a href='#about' className='text-white text-3xl sm:text-4xl font-semibold font-mono'>About</a>
     </div>
 
     <div className='hover:animate-flash'>
-      <a href='' className='text-white text-3xl sm:text-4xl font-semibold font-mono'>Contact</a>
+      <a href='#about' className='text-white text-3xl sm:text-4xl font-semibold font-mono'>Contact</a>
     </div>
     
   </div>

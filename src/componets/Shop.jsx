@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import background from '../assets/farm.jpg';
 import f1 from '../assets/f1.png';
 import f2 from '../assets/f2.png';
@@ -9,7 +9,8 @@ import f6 from '../assets/f6.png';
 import f7 from '../assets/f7.png';
 import cart from '../assets/addcart2.png';
 import backGround from '../assets/About.jpg';
-
+//https://localhost:44397/
+//api/Fruit
 const products = [
   { id: 1, image: f1, name: 'Orange', price: 'R5.99' },
   { id: 2, image: f2, name: 'Strawberry', price: 'R1.99' },

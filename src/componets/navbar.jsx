@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/loloLogo.png';
 import cart from '../assets/addcart2.png';
 
@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div className="flex flex-row sm:flex-row w-full justify-between items-center px-4 py-4">
       <div className="mb-4 sm:mb-0">
-        <a href="">
+        <a href="/">
           <img className="h-24 sm:h-44" src={logo} alt="Logo" />
         </a>
       </div>
@@ -33,18 +33,18 @@ const Navbar = () => {
             menuOpen ? 'block' : 'hidden'
           } md:flex`}
         >
-          <a
-            href="#"
+          <Link
+            to='/LoginPage'
             className="text-white text-lg sm:text-xl font-semibold hover:underline transition duration-300"
           >
             Sign In
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+             to='/RegisterPage'
             className="text-white text-lg sm:text-xl font-semibold hover:underline transition duration-300"
           >
             Register
-          </a>
+          </Link>
 
           <a href="#" className="relative">
             <img className="h-8 sm:h-10 w-8 sm:w-10" src={cart} alt="Cart Icon" />
