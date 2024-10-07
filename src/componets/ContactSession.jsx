@@ -1,23 +1,73 @@
 import React from 'react';
 import backGround from '../assets/About.jpg';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+import { ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactSession = () => {
+  const [fullname, setFullname] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState(''); 
+  const [status, setStatus] = useState(false); 
+  
+  const handleIssue = async (event) => {
+    event.preventDefault(); // Prevent the default form submission
+    const Data = {
+      fullname,
+      email,
+      subject,
+      message,
+      status,
+    };
+    
+    try {
+      const response = await fetch('https://localhost:44397/api/Issue', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(Data),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      console.log(data);
+      
+      if (data === 'false') {
+        toast.error("Not Submitted, try Again");
+      } else {
+        toast.success("Issue Submitted");
+      }
+    } catch (error) {
+      console.error('There was an error adding the data:', error);
+    }
+  };
+  
   return (
     <div
       className="relative py-20 flex flex-col items-center space-y-12"
       style={{ backgroundImage: `url(${backGround})` }}
     >
+      <ToastContainer/>
       <h1 className="text-white text-6xl font-extrabold text-center drop-shadow-lg">
         Contact Us
       </h1>
 
       <div className="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-lg w-full">
+      
         <form className="space-y-6">
           <div className="flex flex-col">
             <label className="text-gray-800 text-lg mb-2" htmlFor="fullName">
               Full Name
             </label>
             <input
+              onChange={(e) => setFullname(e.target.value)}
+              value={fullname}
               id="fullName"
               type="text"
               placeholder="Enter your full name"
@@ -32,6 +82,8 @@ const ContactSession = () => {
             <input
               id="email"
               type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
               placeholder="Enter your email address"
               className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -44,6 +96,8 @@ const ContactSession = () => {
             <input
               id="subject"
               type="text"
+              onChange={(e) => setSubject(e.target.value)}
+              value={subject}
               placeholder="Enter the subject"
               className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -56,6 +110,8 @@ const ContactSession = () => {
             <textarea
               id="message"
               rows="4"
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
               placeholder="Enter your message"
               className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -63,6 +119,7 @@ const ContactSession = () => {
 
           <button
             type="submit"
+            onClick={handleIssue}
             className="w-full py-3 text-white font-semibold rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             style={{ backgroundImage: `url(${backGround})` }}
           >
