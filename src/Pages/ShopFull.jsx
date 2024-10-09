@@ -11,12 +11,13 @@ import cart from '../assets/addcart2.png';
 import backGround from '../assets/About.jpg';
 import { toast } from 'react-toastify';
 import { ToastContainer } from "react-toastify";
-
+import { useParams } from 'react-router-dom';
 //https://localhost:44397/
 //api/Fruit
 
 
 const ShopFull = () => {
+  const { id } = useParams();
   const [fruits, setFruits] =  useState([]);
   useEffect(() => {
     
@@ -36,6 +37,7 @@ const ShopFull = () => {
         const data = await response.json();
         setFruits(data);
         console.log(data);
+        console.log(id);
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
         toast.error("Error fetching fruits.");

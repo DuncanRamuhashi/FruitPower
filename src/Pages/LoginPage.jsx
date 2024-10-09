@@ -37,7 +37,7 @@ const LoginPage = () => {
             toast.error("Wrong details, enter the correct detail!");
          } else  {
           toast.success("Login success");
-          navigate(`/${data.Id}`)
+          navigate(`/ShopFull/${data.Id}`)
          }
          
    }catch (error) {

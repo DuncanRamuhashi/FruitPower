@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-
+import { useParams } from 'react-router-dom';
 
 import 'react-toastify/dist/ReactToastify.css';
 import Hero from './componets/hero';
@@ -25,6 +25,7 @@ const navbarBackground = 'linear-gradient(to right, #ff7e5f, #feb47b)';
 
 
 function App() {
+
   
 //<Route  path="/MainPage" element={<MainPage/>}/>
   return (
@@ -39,7 +40,7 @@ function App() {
           
           <Route  path="/RegisterPage" element={<RegisterPage/>}/>
           <Route  path="/LoginPage" element={<LoginPage/>}/>
-          <Route  path="/ShopFull" element={<ShopFull/>}/>
+          <Route  path="/ShopFull/:id" element={<ShopFull/>}/>
           <Route  path="/FruitManager" element={<FruitManager/>}/>
           <Route  path="/Issues" element={<CustomerIssues/>}/>
           <Route  path="/Cart:id" element={<Cart/>}/>
