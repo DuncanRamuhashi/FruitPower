@@ -3,9 +3,10 @@ import background from '../assets/loginBack.jpg'
 import backGround from '../assets/About.jpg';
 import { toast } from 'react-toastify';
 import { ToastContainer} from "react-toastify";
-
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -31,10 +32,12 @@ const LoginPage = () => {
           }
           const data = await response.json();
           console.log( data);
+          console.log(data.Id);
           if (data === 'false') {
             toast.error("Wrong details, enter the correct detail!");
          } else  {
           toast.success("Login success");
+          navigate(`/${data.Id}`)
          }
          
    }catch (error) {

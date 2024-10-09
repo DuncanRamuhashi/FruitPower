@@ -33,7 +33,7 @@ const CustomerIssues = () => {
             }
 
             toast.success("Issue solved!");
-            fetchIssues(); // Refresh the list of issues after the update
+            fetchIssues(); 
         } catch (error) {
             toast.error(error.message);
         }

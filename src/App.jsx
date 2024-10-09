@@ -20,6 +20,10 @@ import Dashboard from './Pages/Dashboard';
 import Orders from './Pages/Orders';
 
 const navbarBackground = 'linear-gradient(to right, #ff7e5f, #feb47b)';
+
+
+
+
 function App() {
   
 //<Route  path="/MainPage" element={<MainPage/>}/>
@@ -27,7 +31,7 @@ function App() {
     <>
       <Router>
           
-      <section id='home'><Navbar background={navbarBackground} /></section>
+      <section id='home:id'><Navbar background={navbarBackground} /></section>
         
           <Routes>
           
@@ -38,7 +42,7 @@ function App() {
           <Route  path="/ShopFull" element={<ShopFull/>}/>
           <Route  path="/FruitManager" element={<FruitManager/>}/>
           <Route  path="/Issues" element={<CustomerIssues/>}/>
-          <Route  path="/Cart" element={<Cart/>}/>
+          <Route  path="/Cart:id" element={<Cart/>}/>
           <Route  path="/Dashboard" element={<Dashboard/>}/>
           <Route  path="/Orders" element={<Orders/>}/>
           <Route  path="*"  element={

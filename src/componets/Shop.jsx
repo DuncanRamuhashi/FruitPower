@@ -1,45 +1,63 @@
 import React,{useEffect,useState} from 'react';
 import background from '../assets/farm.jpg';
-import f1 from '../assets/f1.png';
-import f2 from '../assets/f2.png';
-import f3 from '../assets/f3.png';
-import f4 from '../assets/f4.png';
-import f5 from '../assets/f5.png';
-import f6 from '../assets/f6.png';
-import f7 from '../assets/f7.png';
+import { useNavigate } from 'react-router-dom';
 import cart from '../assets/addcart2.png';
 import backGround from '../assets/About.jpg';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 //https://localhost:44397/
 //api/Fruit
 
 
 const Shop = () => {
   const [fruits, setFruits] =  useState([]);
-  useEffect(() => {
-    
-    const getFruits = async () => {
-      try {
-        const response = await fetch('https://localhost:44397/api/Fruit', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-  
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-  
-        const data = await response.json();
-        setFruits(data);
-        console.log(data);
-      } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
-        toast.error("Error fetching fruits.");
+  const navigate = useNavigate();
+
+  const getFruits = async () => {
+    try {
+      const response = await fetch('https://localhost:44397/api/Fruit', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    };
+
+      const data = await response.json();
+      setFruits(data);
+      console.log(data);
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+      toast.error("Error fetching fruits.");
+    }
+  };
+  const addToCart = async (id) => {
+         const subFruit = fruits.map( f => f.Id === id )
+         const subDetail = '';
+         
+          const addData =  {
+            UserId: id,
+            FruitNumber: 145,
+            Detail: "apeekeeaea",
+            PRICE: 23.32
+          };
+
+     try{
+          
+     }catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+      toast.error("Error Adding to cart.");
+    }
+  }
+
+  useEffect(() => {
         getFruits()
   },[]);
+
+
   return (
     <div
       className='relative h-full flex items-center px-10 py-5'

@@ -9,6 +9,9 @@ import f6 from '../assets/f6.png';
 import f7 from '../assets/f7.png';
 import cart from '../assets/addcart2.png';
 import backGround from '../assets/About.jpg';
+import { toast } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
+
 //https://localhost:44397/
 //api/Fruit
 
@@ -40,6 +43,39 @@ const ShopFull = () => {
     };
         getFruits()
   },[]);
+
+  const handleLogin = async () => {
+    const loginData = {
+      email,
+      password,
+    };
+    try {
+            
+      const response = await fetch('https://localhost:44397/api/Login',{
+       method: 'POST',
+       headers: {
+             'Content-Type' : 'application/json',
+       },
+       body: JSON.stringify(loginData),
+      });
+        
+      if (!response.ok) {
+       throw new Error(`HTTP error! status: ${res.status}`);
+
+       
+          }
+          const data = await response.json();
+          console.log( data);
+          if (data === 'false') {
+            toast.error("Wrong details, enter the correct detail!");
+         } else  {
+          toast.success("Login success");
+         }
+         
+   }catch (error) {
+        console.error('There was an error adding the data:', error);
+    }
+  };   
   return (
     <div
       className='relative h-full flex items-center px-10 py-5'

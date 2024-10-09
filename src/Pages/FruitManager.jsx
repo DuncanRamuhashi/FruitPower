@@ -87,11 +87,12 @@ const FruitManager = () => {
     }, []);
 
     return (
-        <div className='flex flex-col gap-20 relative h-full py-[100px] bg-cover bg-green-500' >
+        <div className='flex flex-col gap-20 relative h-full py-[50px] bg-cover bg-green-500' >
             <ToastContainer />
+            <h1 className=" text-white text-2xl font-bold text-center ">Fruit Management </h1>
             <div className=" rounded-lg shadow-lg p-8 bg-green-700 w-11/12 mx-auto">
                 <div className='grid grid-cols-4 bg-green-600 h-14'>
-                    {['Id', 'Name', 'Price', 'Image'].map((header) => (
+                    {['ID', 'Name', 'Price', 'Image'].map((header) => (
                         <div key={header} className='flex justify-center items-center'>
                             <h1 className='text-white font-semibold'>{header}</h1>
                         </div>
